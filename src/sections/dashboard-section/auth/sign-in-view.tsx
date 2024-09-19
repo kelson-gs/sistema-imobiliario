@@ -21,7 +21,7 @@ export function SignInView() {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSignIn = useCallback(() => {
-    router.push('/');
+    router.push('/home');
   }, [router]);
 
   const renderForm = (
@@ -93,7 +93,7 @@ export function SignInView() {
           OR
         </Typography>
       </Divider>
-
+{/* 
       <Box gap={1} display="flex" justifyContent="center">
         <IconButton color="inherit">
           <Iconify icon="logos:google-icon" />
@@ -104,7 +104,7 @@ export function SignInView() {
         <IconButton color="inherit">
           <Iconify icon="ri:twitter-x-fill" />
         </IconButton>
-      </Box>
+      </Box> */}
     </>
   );
 }
