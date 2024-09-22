@@ -10,12 +10,12 @@ import { DashboardLayout } from 'src/layouts/dashboard';
 
 // ----------------------------------------------------------------------
 
-export const HomePage = lazy(() => import('src/pages/home'));
-export const BlogPage = lazy(() => import('src/pages/blog'));
-export const UserPage = lazy(() => import('src/pages/user'));
-export const SignInPage = lazy(() => import('src/pages/sign-in'));
-export const ProductsPage = lazy(() => import('src/pages/products'));
-export const Page404 = lazy(() => import('src/pages/page-not-found'));
+export const HomePage = lazy(() => import('src/pages/dashboard/home'));
+export const BlogPage = lazy(() => import('src/pages/dashboard/blog'));
+export const UserPage = lazy(() => import('src/pages/dashboard/user'));
+export const SignInPage = lazy(() => import('src/pages/dashboard/sign-in'));
+export const ProductsPage = lazy(() => import('src/pages/dashboard/products'));
+export const Page404 = lazy(() => import('src/pages/dashboard/page-not-found'));
 
 // ----------------------------------------------------------------------
 
@@ -43,19 +43,19 @@ export function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <HomePage />, index: true },
+        { path: 'home',element: <HomePage />, index: true },
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
         { path: 'blog', element: <BlogPage /> },
       ],
     },
     {
-      path: 'sign-in',
+      path: '/',
       element: (
         <AuthLayout>
           <SignInPage />
         </AuthLayout>
-      ),
+      )
     },
     {
       path: '404',
